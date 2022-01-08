@@ -10,6 +10,9 @@ export class BakedGoodListComponent implements OnInit {
 
   backedGood$ = this.bakedGoodsService.bakedGoods$.pipe(
   );
+  ids = this.bakedGoodsService.getUniques('id');
+  types = this.bakedGoodsService.getUniques('type');
+  batters = this.bakedGoodsService.getUniques('name');
 
   constructor(
     private bakedGoodsService: BakedGoodsService

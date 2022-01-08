@@ -25,4 +25,12 @@ export class BakedGoodsService {
   // TODO: implementation yet to be done
   removebakedGoods(bakedGood: BakedGood) {
   }
+
+  getUniques(property: string) {
+    const bakedGoodsProperties = this.bakedGoods.getValue().map(
+      (bakeGood) => (bakeGood as any)[property]
+    );
+    return [...new Set(bakedGoodsProperties)];
+  }
+
 }

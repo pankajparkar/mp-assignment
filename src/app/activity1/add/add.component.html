@@ -3,15 +3,10 @@
 <form #form="ngForm">
     <div class="form-control">
         <label>
-            Group
+            Id
             <select>
-                <option value="">Select Group</option>
-                <option>001</option>
-                <option>002</option>
-                <option>003</option>
-                <option>004</option>
-                <option>005</option>
-                <option>006</option>
+                <option value="">Select Id</option>
+                <option *ngFor="let id of ids">{{id}}</option>
             </select>
         </label>
     </div>
@@ -20,15 +15,17 @@
             Type
             <select>
                 <option value="">Select Type</option>
-                <option value=""></option>
-                <option value=""></option>
+                <option *ngFor="let type of types">{{type}}</option>
             </select>
         </label>
     </div>
     <div class="form-control">
         <label>
-            Name
-            <input type="text" placeholder="Enter name">
+            Batter
+            <select>
+                <option value="">Select Batter</option>
+                <option *ngFor="let batter of batters">{{batter}}</option>
+            </select>
         </label>
     </div>
     <div class="form-control">
