@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { BakedGood } from 'src/app/models/baked-goods.model';
 import { BakedGoodsService } from '../../services/baked-goods.service';
 
@@ -15,8 +17,18 @@ export class AddBakedGoodComponent implements OnInit {
   batters = this.bakedGoodsService.getUniques('name');
 
   constructor(
-    private bakedGoodsService: BakedGoodsService
+    private bakedGoodsService: BakedGoodsService,
+    private router: Router,
   ) { }
+
+  addBakeGood(form: NgForm) {
+    if (form.invalid) {
+      return;
+    }
+    this.bakedGoodsService.addbakedGoods(this.bakedGood);
+    alert('Baked good added successfully.');
+    this.router.navigate(['../list']);
+  }
 
   ngOnInit(): void {
   }

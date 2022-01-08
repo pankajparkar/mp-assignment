@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Activity3Service } from './activity3.service';
 
 @Component({
   selector: 'mp-activity3',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Activity3Component implements OnInit {
 
-  constructor() { }
+  constructor(
+    private activity3Service: Activity3Service,
+  ) { }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    console.log(await this.activity3Service.getLocations());
   }
 
 }

@@ -4,37 +4,49 @@
     <div class="form-control">
         <label>
             Id
-            <select>
+            <select [(ngModel)]="bakedGood.id" #idField="ngModel" name="id" required>
                 <option value="">Select Id</option>
                 <option *ngFor="let id of ids">{{id}}</option>
             </select>
         </label>
+        <div *ngIf="form.submitted && idField.invalid">
+            Id is required field
+        </div>
     </div>
     <div class="form-control">
         <label>
             Type
-            <select>
+            <select [(ngModel)]="bakedGood.type" #typeField="ngModel" name="type" required>
                 <option value="">Select Type</option>
                 <option *ngFor="let type of types">{{type}}</option>
             </select>
         </label>
+        <div *ngIf="form.submitted && typeField.invalid">
+            Type is required field
+        </div>
     </div>
     <div class="form-control">
         <label>
             Batter
-            <select>
+            <select [(ngModel)]="bakedGood.name" #nameField="ngModel" name="name" required>
                 <option value="">Select Batter</option>
                 <option *ngFor="let batter of batters">{{batter}}</option>
             </select>
         </label>
+        <div *ngIf="form.submitted && nameField.invalid">
+            Batter is required field
+        </div>
     </div>
     <div class="form-control">
         <label>
             Topping
-            <input type="text" placeholder="Enter topping">
+            <input type="text" [(ngModel)]="bakedGood.topping" #toppingField="ngModel" placeholder="Enter topping" name="topping" required>
         </label>
+        <div *ngIf="form.submitted && toppingField.invalid">
+            Topping is required field
+        </div>
     </div>
-    <button type="submit" [disabled]="form.invalid">
+    <button type="submit" (click)="addBakeGood(form)">
         Create
     </button>
 </form>
