@@ -1,4 +1,4 @@
-export interface BakedGoods {
+export interface BakedGood {
     id: number;
     type: string;
     name: string;

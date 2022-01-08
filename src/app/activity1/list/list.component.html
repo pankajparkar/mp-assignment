@@ -1,0 +1,24 @@
+<h1>Baked Goods</h1>
+<br>
+<button type="button" routerLink="add">
+    + Add
+</button>
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Type</th>
+            <th>Name</th>
+            <th>Topping</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let bakedGood of backedGood$ | async">
+            <td> {{ bakedGood.id }}</td>
+            <td> {{ bakedGood.type }}</td>
+            <td> {{ bakedGood.name }}</td>
+            <td> {{ bakedGood.topping }}</td>
+        </tr>
+    </tbody>
+</table>

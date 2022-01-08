@@ -8,6 +8,9 @@ import { FooterComponent } from './footer/footer.component';
 import { Activity1Component } from './activity1/activity1.component';
 import { Activity2Component } from './activity2/activity2.component';
 import { Activity3Component } from './activity3/activity3.component';
+import { BakedGoodListComponent } from './activity1/list/list.component';
+import { AddBakedGoodComponent } from './activity1/add/add.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,11 +19,14 @@ import { Activity3Component } from './activity3/activity3.component';
     FooterComponent,
     Activity1Component,
     Activity2Component,
-    Activity3Component
+    Activity3Component,
+    BakedGoodListComponent,
+    AddBakedGoodComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

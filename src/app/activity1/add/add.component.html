@@ -1,0 +1,43 @@
+<h1>Baked Goods</h1>
+<br>
+<form #form="ngForm">
+    <div class="form-control">
+        <label>
+            Group
+            <select>
+                <option value="">Select Type</option>
+                <option>001</option>
+                <option>002</option>
+                <option>003</option>
+                <option>004</option>
+                <option>005</option>
+                <option>006</option>
+            </select>
+        </label>
+    </div>
+    <div class="form-control">
+        <label>
+            Type
+            <select>
+                <option value="">Select Type</option>
+                <option value=""></option>
+                <option value=""></option>
+            </select>
+        </label>
+    </div>
+    <div class="form-control">
+        <label>
+            Name
+            <input type="text">
+        </label>
+    </div>
+    <div class="form-control">
+        <label>
+            Topping
+            <input type="text">
+        </label>
+    </div>
+    <button type="submit" [disabled]="form.invalid">
+        Create
+    </button>
+</form>

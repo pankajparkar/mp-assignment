@@ -1,6 +1,6 @@
-import { BakedGoods } from '../models/baked-goods.model';
+import { BakedGood } from '../models/baked-goods.model';
 
-export const BAKED_GOODS: BakedGoods[] = [
+export const BAKED_GOODS: BakedGood[] = [
     {
         "id": 1,
         "type": "donut",
