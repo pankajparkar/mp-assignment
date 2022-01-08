@@ -11,6 +11,7 @@ import { Activity3Component } from './activity3/activity3.component';
 import { BakedGoodListComponent } from './activity1/list/list.component';
 import { AddBakedGoodComponent } from './activity1/add/add.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     Activity2Component,
     Activity3Component,
     BakedGoodListComponent,
-    AddBakedGoodComponent
+    AddBakedGoodComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
