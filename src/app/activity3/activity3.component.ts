@@ -7,6 +7,17 @@ import { Activity3Service } from './activity3.service';
   styleUrls: ['./activity3.component.css']
 })
 export class Activity3Component implements OnInit {
+  code = `
+    async getLocations() {
+      return fetch(
+        ' https://api.megaport.com/v2/locations',
+        { method: 'GET' },
+      )
+      .then(async (res) => {
+        return await res.json();
+      });
+    }
+  `;
 
   constructor(
     private activity3Service: Activity3Service,
