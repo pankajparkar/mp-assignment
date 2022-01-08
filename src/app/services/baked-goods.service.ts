@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { BakedGood } from '../models/baked-goods.model';
 import { BAKED_GOODS } from '../data/baked-goods';
+import { ObjectService } from './object.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,9 @@ export class BakedGoodsService {
   private bakedGoods = new BehaviorSubject<BakedGood[]>(BAKED_GOODS);
   bakedGoods$ = this.bakedGoods.asObservable();
 
-  constructor() { }
+  constructor(
+    private objectService: ObjectService,
+  ) { }
 
   addbakedGoods(bakedGood: BakedGood) {
     const bakedGoods = this.bakedGoods.getValue();
@@ -27,10 +30,9 @@ export class BakedGoodsService {
   }
 
   getUniques(property: string) {
-    const bakedGoodsProperties = this.bakedGoods.getValue().map(
-      (bakeGood) => (bakeGood as any)[property]
-    );
-    return [...new Set(bakedGoodsProperties)];
+    const bakedGoods = this.bakedGoods.getValue();
+    const items = this.objectService.getUniques(bakedGoods, property);
+    return items;
   }
 
 }

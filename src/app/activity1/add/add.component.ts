@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BakedGood } from 'src/app/models/baked-goods.model';
-import { BakedGoodsService } from '../baked-goods.service';
+import { BakedGoodsService } from '../../services/baked-goods.service';
 
 @Component({
   selector: 'mp-add',
@@ -14,7 +14,9 @@ export class AddBakedGoodComponent implements OnInit {
   types = this.bakedGoodsService.getUniques('type');
   batters = this.bakedGoodsService.getUniques('name');
 
-  constructor(private bakedGoodsService: BakedGoodsService) { }
+  constructor(
+    private bakedGoodsService: BakedGoodsService
+  ) { }
 
   ngOnInit(): void {
   }

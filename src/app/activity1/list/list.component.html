@@ -1,45 +1,18 @@
 <h1>Baked Goods</h1>
 <br>
-<div class="filters">
-    <h4>Sorting</h4>
-    <div>
-        <label>
-            Id
-            <select>
-                <option value="">Select Id</option>
-                <option *ngFor="let id of ids">{{id}}</option>
-            </select>
-        </label>
-    </div>
-    <div>
-        <label>
-            Type
-            <select>
-                <option value="">Select Type</option>
-                <option *ngFor="let type of types">{{type}}</option>
-            </select>
-        </label>
-    </div>
-    <div>
-        <label>
-            Batter
-            <select>
-                <option value="">Select Batter</option>
-                <option *ngFor="let batter of batters">{{batter}}</option>
-            </select>
-        </label>
-    </div>
-</div>
 <button type="button" routerLink="add">
     + Add
 </button>
-
+<button type="button" (click)="clearSorting()">
+    Clear Filters
+</button>
+{{ sorting | json }}
 <table>
     <thead>
-        <tr>
-            <th>Id</th>
-            <th>Type</th>
-            <th>Name</th>
+        <tr #form="ngForm" ngForm>
+            <th (click)="changeSorting('id')">Id</th>
+            <th (click)="changeSorting('type')">Type</th>
+            <th (click)="changeSorting('name')">Batter</th>
             <th>Topping</th>
         </tr>
     </thead>
