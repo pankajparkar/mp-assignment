@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { BakedGoods } from '../models/backed-goods.model';
+import { BakedGoods } from '../models/baked-goods.model';
 import { BAKED_GOODS } from '../data/baked-goods';
 
 @Injectable({
@@ -8,21 +8,21 @@ import { BAKED_GOODS } from '../data/baked-goods';
 })
 export class BakedGoodsService {
 
-  private backedGoods = new BehaviorSubject<BakedGoods[]>(BAKED_GOODS);
-  backedGoods$ = this.backedGoods.asObservable();
+  private bakedGoods = new BehaviorSubject<BakedGoods[]>(BAKED_GOODS);
+  bakedGoods$ = this.bakedGoods.asObservable();
 
   constructor() { }
 
-  addBackedGoods(bakedGood: BakedGoods) {
-    const backedGoods = this.backedGoods.getValue();
+  addbakedGoods(bakedGood: BakedGoods) {
+    const bakedGoods = this.bakedGoods.getValue();
     // TODO: add validation here
     if (bakedGood) {
-      backedGoods.push(bakedGood);
-      this.backedGoods.next(backedGoods);
+      bakedGoods.push(bakedGood);
+      this.bakedGoods.next(bakedGoods);
     }
   }
 
   // TODO: implementation yet to be done
-  removeBackedGoods(bakedGood: BakedGoods) {
+  removebakedGoods(bakedGood: BakedGoods) {
   }
 }

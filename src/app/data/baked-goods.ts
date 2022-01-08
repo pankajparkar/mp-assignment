@@ -1,4 +1,4 @@
-import { BakedGoods } from '../models/backed-goods.model'[]
+import { BakedGoods } from '../models/baked-goods.model';
 
 export const BAKED_GOODS: BakedGoods[] = [
     {

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BakedGoodsService } from './baked-goods.service';
 
 @Component({
   selector: 'mp-activity1',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Activity1Component implements OnInit {
 
-  constructor() { }
+  backedGood$ = this.bakedGoodsService.bakedGoods$.pipe(
+
+  );
+
+  constructor(
+    private bakedGoodsService: BakedGoodsService
+  ) { }
 
   ngOnInit(): void {
   }

@@ -1,1 +1,10 @@
-<p>activity1 works!</p>
+<table>
+    <tbody>
+        <tr *ngFor="let bakedGood of backedGood$ | async">
+            <td> {{ bakedGood.id }}</td>
+            <td> {{ bakedGood.type }}</td>
+            <td> {{ bakedGood.name }}</td>
+            <td> {{ bakedGood.topping }}</td>
+        </tr>
+    </tbody>
+</table>
