@@ -13,8 +13,17 @@ export class Activity3Component implements OnInit {
         ' https://api.megaport.com/v2/locations',
         { method: 'GET' },
       )
+      .then(res => res.json())
       .then(async (res) => {
-        return await res.json();
+        return {
+          data: res.data,
+          success: true
+        };
+      }).catch((error) => {
+        return {
+          data: error,
+          success: false
+        };
       });
     }
   `;
