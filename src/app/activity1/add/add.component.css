@@ -1,0 +1,12 @@
+.add-form {
+    padding: 10px;
+}
+
+label {
+    min-width: 100px;
+    display: inline-block;
+}
+
+.form-field {
+    padding: 10px;
+}

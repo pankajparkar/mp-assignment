@@ -1,52 +1,54 @@
-<h1>Baked Goods</h1>
-<br>
-<form #form="ngForm">
-    <div class="form-control">
-        <label>
-            Id
-            <select [(ngModel)]="bakedGood.id" #idField="ngModel" name="id" required>
+<div class="add-form">
+    <h1>Baked Goods</h1>
+    <form #form="ngForm">
+        <div class="form-field">
+            <label>
+                Id
+            </label>
+            <select [(ngModel)]="bakedGood.id" class="form-control" #idField="ngModel" name="id" required>
                 <option value="">Select Id</option>
                 <option *ngFor="let id of ids">{{id}}</option>
             </select>
-        </label>
-        <div *ngIf="form.submitted && idField.invalid">
-            Id is required field
+            <div *ngIf="form.submitted && idField.invalid">
+                Id is required field
+            </div>
         </div>
-    </div>
-    <div class="form-control">
-        <label>
-            Type
-            <select [(ngModel)]="bakedGood.type" #typeField="ngModel" name="type" required>
+        <div class="form-field">
+            <label>
+                Type
+            </label>
+            <select [(ngModel)]="bakedGood.type" class="form-control" #typeField="ngModel" name="type" required>
                 <option value="">Select Type</option>
                 <option *ngFor="let type of types">{{type}}</option>
             </select>
-        </label>
-        <div *ngIf="form.submitted && typeField.invalid">
-            Type is required field
+            <div *ngIf="form.submitted && typeField.invalid">
+                Type is required field
+            </div>
         </div>
-    </div>
-    <div class="form-control">
-        <label>
-            Batter
-            <select [(ngModel)]="bakedGood.name" #nameField="ngModel" name="name" required>
+        <div class="form-field">
+            <label>
+                Batter
+            </label>
+            <select [(ngModel)]="bakedGood.name" class="form-control" #nameField="ngModel" name="name" required>
                 <option value="">Select Batter</option>
                 <option *ngFor="let batter of batters">{{batter}}</option>
             </select>
-        </label>
-        <div *ngIf="form.submitted && nameField.invalid">
-            Batter is required field
+            <div *ngIf="form.submitted && nameField.invalid">
+                Batter is required field
+            </div>
         </div>
-    </div>
-    <div class="form-control">
-        <label>
-            Topping
-            <input type="text" [(ngModel)]="bakedGood.topping" #toppingField="ngModel" placeholder="Enter topping" name="topping" required>
-        </label>
-        <div *ngIf="form.submitted && toppingField.invalid">
-            Topping is required field
+        <div class="form-field">
+            <label>
+                Topping
+            </label>
+            <input type="text" class="form-control" [(ngModel)]="bakedGood.topping" #toppingField="ngModel" placeholder="Enter topping" name="topping" required>
+    
+            <div *ngIf="form.submitted && toppingField.invalid">
+                Topping is required field
+            </div>
         </div>
-    </div>
-    <button type="submit" (click)="addBakeGood(form)">
-        Create
-    </button>
-</form>
+        <button type="submit" (click)="addBakeGood(form)">
+            Create
+        </button>
+    </form>
+</div>

@@ -11,7 +11,11 @@ import { BakedGoodsService } from '../../services/baked-goods.service';
 })
 export class AddBakedGoodComponent implements OnInit {
 
-  bakedGood = {} as BakedGood;
+  bakedGood = {
+    name: '',
+    type: '',
+    topping: '',
+  } as BakedGood;
   ids = this.bakedGoodsService.getUniques('id');
   types = this.bakedGoodsService.getUniques('type');
   batters = this.bakedGoodsService.getUniques('name');
