@@ -11,6 +11,12 @@ const DEFAULT_TITLE = 'Application';
 export class NavbarComponent implements OnInit {
 
   title = DEFAULT_TITLE;
+  menuItems = [
+    {name: 'Dashboard', link: '/home'},
+    {name: 'Activity 1', link: '/activity1'},
+    {name: 'Activity 2', link: '/activity2'},
+    {name: 'Activity 3', link: '/activity3'},
+  ];
 
   constructor(
     readonly router: Router,
