@@ -1,31 +1,39 @@
-<h1>Baked Goods</h1>
-<br>
-<input type="text" [(ngModel)]="sorting.search"/>
-<button type="button" (click)="sorting$.next(sorting)">
-    Search
-</button>
-<button type="button" routerLink="../add">
-    + Add
-</button>
-<button type="button" (click)="clearSorting()">
-    Clear Filters
-</button>
-{{ sorting | json }}
-<table>
-    <thead>
-        <tr #form="ngForm" ngForm>
-            <th (click)="changeSorting('id')">Id</th>
-            <th (click)="changeSorting('type')">Type</th>
-            <th (click)="changeSorting('name')">Batter</th>
-            <th>Topping</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let bakedGood of backedGood$ | async">
-            <td> {{ bakedGood.id }}</td>
-            <td> {{ bakedGood.type }}</td>
-            <td> {{ bakedGood.name }}</td>
-            <td> {{ bakedGood.topping }}</td>
-        </tr>
-    </tbody>
-</table>
+<div class="list">
+    <h1>Baked Goods</h1>
+    <div class="filtering">
+        <input type="text" class="form-control" [(ngModel)]="sorting.search"/>
+        <button type="button" (click)="sorting$.next(sorting)">
+            Search
+        </button>
+        <button type="button" routerLink="../add">
+            + Add
+        </button>
+        <button type="button" (click)="clearSorting()">
+            Clear Filters
+        </button>
+    </div>
+    
+    <table class="grid" border="0" cellspacing="0" cellpadding="0">
+        <thead>
+            <tr #form="ngForm" ngForm>
+                <th (click)="changeSorting('id')">Id</th>
+                <th (click)="changeSorting('type')">Type</th>
+                <th (click)="changeSorting('name')">Batter</th>
+                <th>Topping</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let bakedGood of backedGood$ | async">
+                <td> {{ bakedGood.id }}</td>
+                <td> {{ bakedGood.type }}</td>
+                <td> {{ bakedGood.name }}</td>
+                <td> {{ bakedGood.topping }}</td>
+            </tr>
+            <tr *ngFor="let bakedGood of backedGood$ | async">
+                <td colspan="4">
+                    No data to show.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,35 @@
+.list {
+    padding: 10px;
+}
+.grid {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table.grid tr {
+    height: 25px;
+}
+
+table.grid tr td,
+table.grid tr td {
+    min-width: 30px;
+}
+
+table.grid thead tr th {
+    border-bottom: 2px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+table.grid thead tr th,
+table.grid tr td {
+    padding: 5px;
+    text-align: left;
+}
+
+table.grid tr td {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.filtering {
+    padding-bottom: 20px;
+}
