@@ -25,6 +25,26 @@ export class Activity2Component implements OnInit {
     },
   };
 
+  object = `
+    info = {
+      name: 'Megaport',
+      address: {
+      office: {
+          unit: 'Level 3',
+          street: '825 Ann Street',
+          suburb: 'Fortitude Valley',
+          city: 'Brisbane',
+          state: 'Queensland',
+          postcode: 4006,
+      },
+      },
+      industry: {
+      type: 'Internet and telecommunications',
+      asxListed: true,
+      },
+    };
+  `
+
   code = `
     /**
      * get the value of the property
