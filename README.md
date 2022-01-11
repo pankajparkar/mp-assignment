@@ -23,3 +23,7 @@ You can build the project by running command `npm run build-prod`
 ## Deploy
 
 This project is deployed on gh-pages. To deploy the same run `npm run build-deploy`.
+
+## Known Issues
+
+- Sorting has some issue, it work on latest column that have been selected.
