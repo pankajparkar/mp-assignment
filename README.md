@@ -27,3 +27,10 @@ This project is deployed on gh-pages. To deploy the same run `npm run build-depl
 ## Known Issues
 
 - Sorting has some issue, it work on latest column that have been selected.
+
+## Future Scope
+
+- Sorting can be improved
+- Grid can be separate component
+- Create a separate modules for each activity
+- Load these modules using lazy loading
