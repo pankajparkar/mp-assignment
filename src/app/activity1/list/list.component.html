@@ -16,9 +16,24 @@
     <table class="grid" border="0" cellspacing="0" cellpadding="0">
         <thead>
             <tr #form="ngForm" ngForm>
-                <th (click)="changeSorting('id')">Id</th>
-                <th (click)="changeSorting('type')">Type</th>
-                <th (click)="changeSorting('name')">Batter</th>
+                <th (click)="changeSorting('id')">
+                    Id
+                    <span *ngIf="sorting.id === undefined">⇅</span>
+                    <span *ngIf="sorting.id === true">↑</span>
+                    <span *ngIf="sorting.id === false">↓</span>
+                </th>
+                <th (click)="changeSorting('type')">
+                    Type
+                    <span *ngIf="sorting.type === undefined">⇅</span>
+                    <span *ngIf="sorting.type === true">↑</span>
+                    <span *ngIf="sorting.type === false">↓</span>
+                </th>
+                <th (click)="changeSorting('name')">
+                    Batter
+                    <span *ngIf="sorting.name === undefined">⇅</span>
+                    <span *ngIf="sorting.name === true">↑</span>
+                    <span *ngIf="sorting.name === false">↓</span>
+                </th>
                 <th>Topping</th>
             </tr>
         </thead>
@@ -29,7 +44,7 @@
                 <td> {{ bakedGood.name }}</td>
                 <td> {{ bakedGood.topping }}</td>
             </tr>
-            <tr *ngFor="let bakedGood of backedGood$ | async">
+            <tr *ngIf="!(backedGood$ | async)?.length">
                 <td colspan="4">
                     No data to show.
                 </td>

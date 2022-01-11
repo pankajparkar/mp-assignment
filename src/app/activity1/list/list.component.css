@@ -6,6 +6,10 @@
     width: 100%;
 }
 
+table.grid tr th {
+    cursor: pointer;
+}
+
 table.grid tr {
     height: 25px;
 }
