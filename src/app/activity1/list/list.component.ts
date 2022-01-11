@@ -37,11 +37,15 @@ export class BakedGoodListComponent implements OnInit {
           (bakedGood.topping.toLocaleLowerCase()).includes(search)
         )
       ): bakedGoods;
+      
+      // TODO: at a time only one sorting happening, make it multiple column base sort
       return [...filteredResult].sort((a: any, b: any) => {
         return (
-          (!id || (b.id - a.id)) ||
-          (!type && a.type.localeCompare(b.type)) ||
-          (!name && a.name.localeCompare(b.name))
+          (sorting.id != undefined ? (sorting.id ? b.id - a.id: a.id - b.id): -1) && 
+          (sorting.name != undefined ? (sorting.name ? b.name.localeCompare(a.name): a.name.localeCompare(b.name)): -1) &&
+          (sorting.type != undefined ? (
+            sorting.type ? b.type.localeCompare(a.type): a.type.localeCompare(b.type)
+          ): -1)
         );
       });
     })
