@@ -18,19 +18,23 @@ interface BakedGoodSorting {
 export class BakedGoodListComponent implements OnInit {
 
   sorting = {} as BakedGoodSorting;
-  private sorting$ = new BehaviorSubject(this.sorting);
+  sorting$ = new BehaviorSubject(this.sorting);
   ids = this.bakedGoodsService.getUniques('id');
   types = this.bakedGoodsService.getUniques('type');
   batters = this.bakedGoodsService.getUniques('name');
-  backedGood$ = combineLatest(this.bakedGoodsService.bakedGoods$, this.sorting$).pipe(
+  backedGood$ = combineLatest(
+    this.bakedGoodsService.bakedGoods$,
+    this.sorting$
+  ).pipe(
     map(([bakedGoods, sorting]) => {
-      const { id, name, type, search} = sorting;
+      const { id, name, type} = sorting;
+      let search = (sorting.search || '').toLocaleLowerCase();
       const filteredResult = search ? bakedGoods.filter(
         bakedGood => (
           (bakedGood.id).toString().includes(search) || 
-          (bakedGood.type).includes(search) || 
-          (bakedGood.name).includes(search) || 
-          (bakedGood.topping).includes(search)
+          (bakedGood.type.toLocaleLowerCase()).includes(search) || 
+          (bakedGood.name.toLocaleLowerCase()).includes(search) || 
+          (bakedGood.topping.toLocaleLowerCase()).includes(search)
         )
       ): bakedGoods;
       return [...filteredResult].sort((a: any, b: any) => {

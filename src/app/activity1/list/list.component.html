@@ -1,5 +1,9 @@
 <h1>Baked Goods</h1>
 <br>
+<input type="text" [(ngModel)]="sorting.search"/>
+<button type="button" (click)="sorting$.next(sorting)">
+    Search
+</button>
 <button type="button" routerLink="../add">
     + Add
 </button>

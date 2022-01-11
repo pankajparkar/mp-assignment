@@ -27,7 +27,7 @@ export class AddBakedGoodComponent implements OnInit {
     }
     this.bakedGoodsService.addbakedGoods(this.bakedGood);
     alert('Baked good added successfully.');
-    this.router.navigate(['../list']);
+    this.router.navigate(['/activity1']);
   }
 
   ngOnInit(): void {
