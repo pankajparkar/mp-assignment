@@ -9,7 +9,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "deploy": "gh-pages -d dist/mp-assignment",
-    "build-deploy": "npm run build-prod && npm run deploy",
+    "build-deploy": "npm run build-prod && npm run copy-index && npm run deploy",
+    "copy-index": "cp dist/mp-assignment/index.html dist/mp-assignment/404.html",
     "gh-pages": "gh-pages"
   },
   "private": true,
